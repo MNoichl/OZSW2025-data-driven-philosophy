@@ -68,6 +68,7 @@ Follow along at: [https://mnoichl.github.io/OZSW2025-data-driven-philosophy/](ht
 
 # What happens next?
 
-* Until the weekend: We send around a list of potential readings.
-* Until the next session: Participants rate their interest In the readings.
-* During the hackathon. 
+* **Until the weekend:** We send around a list of potential readings. 
+* **Until the next session:** Participants  mark their interest in the readings on a spread-sheet. 
+* **During the next session (1. Oktober):** We coordinate groups for the reading-presentations and talk through more concrete project-ideas.. 
+* **During the hackathon:** Short reading-presentations (10 min each), Keynotes by Gregor Betz and Charles-Pence, general introductions to text-analysis and network-models, and then *Work, work, work!* 
