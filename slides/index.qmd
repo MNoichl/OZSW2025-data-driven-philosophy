@@ -35,6 +35,7 @@ max-scale: 1.6
 #quarto preview /Users/Noich001/Desktop/network_epistemology_playground/talk_BOCHUM/Data_and_ABMs.qmd
 #quarto add martinomagnifico/quarto-multimodal
 ---
+
 # {background-iframe="background_network.html" background-size="120%" background-position="left bottom" background-opacity="1."}
 ::: {.absolute top=-50 left=700 background="#000" .title-block}
 <h1 class="title">Data-Driven Methods for Philosophy</h1>
@@ -46,8 +47,8 @@ max-scale: 1.6
 
 <iframe
   src="qrcode.html"
-  width="300"
-  height="300"
+  width="700"
+  height="700"
   style="border:0; display: block; margin: 0 auto;"
 ></iframe>
 

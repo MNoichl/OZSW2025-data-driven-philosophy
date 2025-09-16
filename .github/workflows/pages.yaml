@@ -45,6 +45,15 @@ jobs:
         working-directory: slides
         run: |
           rsync -a reveal.js-5.2.1 ../_site/slides/reveal.js-5.2.1
+      
+      - name: Copy extra static assets
+        working-directory: slides
+        run: |
+          # Copy everything in slides/ except sources and the local reveal folder
+          rsync -a ./ ../_site/slides/ \
+            --exclude 'index.qmd' \
+            --exclude '*.qmd' \
+            --exclude 'reveal.js-5.2.1'
 
       # Optional: list what will be published
       - name: List site files
