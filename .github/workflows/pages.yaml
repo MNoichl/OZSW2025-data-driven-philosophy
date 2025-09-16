@@ -1,3 +1,4 @@
+# .github/workflows/pages.yml
 name: Build and deploy Reveal slides
 
 on:
@@ -19,54 +20,53 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Quarto CLI for render + convert
+      # Quarto CLI
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: "1.7.34"   # pin a stable release
-      # sanity check
+          version: "1.7.34"
       - run: quarto --version
 
-      # Render just slides/index.qmd to Reveal.js HTML
-      # - name: Render Reveal slides
-      #   run: |
-      #     quarto render slides/index.qmd --to revealjs --output-dir _site/slides
-
-
-      # sanity check that the local reveal is present
+      # Make sure your local reveal.js is present next to index.qmd
       - name: Verify Reveal assets
         working-directory: slides
         run: |
           test -d reveal.js-5.2.1/dist
 
-      # render HTML
+      # Render to _site/slides
       - name: Render Reveal slides
         working-directory: slides
         run: |
-          # no BIBARG override here
           quarto render index.qmd --to revealjs --output-dir ../_site/slides
           test -f ../_site/slides/index.html
 
+      # Include your local reveal.js in the deployed artifact
+      - name: Copy reveal.js to site
+        working-directory: slides
+        run: |
+          rsync -a reveal.js-5.2.1 ../_site/slides/reveal.js-5.2.1
 
-
-      # If your repo already contains static Reveal assets, copy them in
-      # (skip this step if Quarto is writing site_libs for you)
-      #- name: Copy static assets
-      #  run: rsync -av --delete slides/assets/ _site/slides/assets/
+      # Optional: list what will be published
+      - name: List site files
+        run: |
+          echo "Site tree:"
+          find _site/slides -maxdepth 2 -type f | sort
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # Reuse your previous style: upload the folder that should be the site root
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: _site/slides
 
   deploy:
     needs: build
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Pages
+      - id: deployment
         uses: actions/deploy-pages@v4
