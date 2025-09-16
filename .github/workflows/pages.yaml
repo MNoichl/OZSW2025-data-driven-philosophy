@@ -23,7 +23,9 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: "latest"
+          version: "1.7.34"   # pin a stable release
+      # sanity check
+      - run: quarto --version
 
       # Render just slides/index.qmd to Reveal.js HTML
       - name: Render Reveal slides
