@@ -19,7 +19,7 @@ format:
         auto-stretch: false
         incremental: true 
         
-bibliography: /Users/Noich001/Desktop/Talks/MyLibrary.bib
+bibliography: my_lib.bib
 # csl: the-journal-of-modern-history.csl
 cite-method: citeproc
 dependencies:
