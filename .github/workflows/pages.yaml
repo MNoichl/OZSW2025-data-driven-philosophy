@@ -1,5 +1,5 @@
-# .github/workflows/pages.yml
-name: Deploy slides to GitHub Pages
+name: Build and deploy Reveal slides
+
 on:
   push:
     branches: [ main ]
@@ -14,16 +14,41 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # build step would go here if you have one
-      - uses: actions/upload-pages-artifact@v3
+
+      # Quarto CLI for render + convert
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
         with:
-          path: slides     # publish this folder
-      - id: deployment
+          version: "latest"
+
+      # Render just slides/index.qmd to Reveal.js HTML
+      - name: Render Reveal slides
+        run: |
+          quarto render slides/index.qmd --to revealjs --output-dir _site/slides
+
+
+      # If your repo already contains static Reveal assets, copy them in
+      # (skip this step if Quarto is writing site_libs for you)
+      #- name: Copy static assets
+      #  run: rsync -av --delete slides/assets/ _site/slides/assets/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Pages
         uses: actions/deploy-pages@v4
