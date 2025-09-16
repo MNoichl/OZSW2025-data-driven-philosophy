@@ -58,3 +58,16 @@ Follow along at: [https://mnoichl.github.io/OZSW2025-data-driven-philosophy/](ht
 1. ⁠Welcome and Introduction.
 2. ⁠Participant Introductions (current roles, past experiences)
 3. ⁠Participant interests and, where applicable, project ideas
+
+
+# {background-iframe="https://gregorboes.com/" background-size="120%" background-position="left bottom" background-opacity="1."}
+
+
+# {background-iframe="https://maxnoichl.eu/" background-size="120%" background-position="left bottom" background-opacity="1."}
+
+
+# What happens next?
+
+* Until the weekend: We send around a list of potential readings.
+* Until the next session: Participants rate their interest In the readings.
+* During the hackathon. 
