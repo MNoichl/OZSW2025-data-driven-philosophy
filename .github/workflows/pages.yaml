@@ -28,9 +28,26 @@ jobs:
       - run: quarto --version
 
       # Render just slides/index.qmd to Reveal.js HTML
-      - name: Render Reveal slides
+      # - name: Render Reveal slides
+      #   run: |
+      #     quarto render slides/index.qmd --to revealjs --output-dir _site/slides
+
+
+      # sanity check that the local reveal is present
+      - name: Verify Reveal assets
+        working-directory: slides
         run: |
-          quarto render slides/index.qmd --to revealjs --output-dir _site/slides
+          test -d reveal.js-5.2.1/dist
+
+      # render HTML
+      - name: Render Reveal slides
+        working-directory: slides
+        run: |
+          # optional: fix the absolute macOS path for CI
+          if [ -f MyLibrary.bib ]; then BIBARG="-M bibliography=MyLibrary.bib"; else BIBARG="-M bibliography="; fi
+          quarto render index.qmd --to revealjs --output-dir ../_site/slides $BIBARG
+          test -f ../_site/slides/index.html
+
 
 
       # If your repo already contains static Reveal assets, copy them in
