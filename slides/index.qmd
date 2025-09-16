@@ -60,15 +60,35 @@ Follow along at: [https://mnoichl.github.io/OZSW2025-data-driven-philosophy/](ht
 3. ⁠Participant interests and, where applicable, project ideas
 
 
+
 # {background-iframe="https://gregorboes.com/" background-size="120%" background-position="left bottom" background-opacity="1."}
 
 
 # {background-iframe="https://maxnoichl.eu/" background-size="120%" background-position="left bottom" background-opacity="1."}
 
 
+# 
+
+::: {.r-fit-text .highlight}
+General Introductions
+:::
+::: {.r-fit-text }
+Please introduce yourself, including your background and general interests.
+:::
+
+# 
+
+::: {.r-fit-text .highlight}
+Project Ideas
+:::
+::: {.r-fit-text }
+Please share project ideas. Vague ideas welcome!
+:::
+
+
 # What happens next?
 
-* **Until the weekend:** We send around a list of potential readings. 
+* **Until the weekend:** We share a list of potential readings. Participants fill out the `nuudel` for the timing of the next session.  
 * **Until the next session:** Participants  mark their interest in the readings on a spread-sheet. 
-* **During the next session (1. Oktober):** We coordinate groups for the reading-presentations and talk through more concrete project-ideas.. 
+* **During the next session (1. Oktober):** We coordinate groups for the reading-presentations and talk through more concrete project-ideas. 
 * **During the hackathon:** Short reading-presentations (10 min each), Keynotes by Gregor Betz and Charles-Pence, general introductions to text-analysis and network-models, and then *Work, work, work!* 
