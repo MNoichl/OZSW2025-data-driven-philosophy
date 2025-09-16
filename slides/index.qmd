@@ -88,7 +88,7 @@ Please share project ideas. Vague ideas welcome!
 
 # What happens next?
 
-* **Until the weekend:** We share a list of potential readings. Participants fill out the `nuudel` for the timing of the next session.  
-* **Until the next session:** Participants  mark their interest in the readings on a spread-sheet. 
-* **During the next session (1. Oktober):** We coordinate groups for the reading-presentations and talk through more concrete project-ideas. 
-* **During the hackathon:** Short reading-presentations (10 min each), Keynotes by Gregor Betz and Charles-Pence, general introductions to text-analysis and network-models, and then *Work, work, work!* 
+* **Until the weekend:** Based on your interests, we compile a list of relevant readings. If you haven't done so, fill out the [nuudel](https://nuudel.digitalcourage.de/9mizSGXFudN7cGCj) for the timing of the next session. 
+* **Until the next session:** You mark on a spreadsheet which readings you are interested in. 
+* **During the next session (1. Oktober):** We coordinate groups to present the readings and to talk through more concrete project-ideas. 
+* **During the hackathon:** Keynotes by [Gregor Betz](https://www.gregorbetz.de/) and [Charles Pence](https://charlespence.net/en/), short reading presentations (10 min presentation + 10 min discussion each), interactive introductions to text-analysis and network-models, and most of all *work, work, work!* 
